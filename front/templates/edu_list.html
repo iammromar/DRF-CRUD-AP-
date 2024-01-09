@@ -1,0 +1,32 @@
+<!-- templates/edu_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educations List</title>
+</head>
+<body>
+
+    <h1>Educations List</h1>
+
+    <ul>
+        {% for edu_item in edu_list %}
+            <li>
+                <strong>{{ edu_item.title }}</strong><br>
+                Description: {{ edu_item.desc }}<br>
+                {% if edu_item.img %}
+    <img src="{{ edu_item.img.url }}" alt="{{ edu_item.title }}" width="100">
+{% else %}
+    Resim Yok
+{% endif %}
+
+            </li>
+        {% endfor %}
+    </ul>
+    
+
+</body>
+</html>
